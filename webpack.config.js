@@ -4,15 +4,16 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+  projectTitle,
+  bundleDirName,
+  templateHtmlPath,
+  entryPointOption,
+  devServerHost,
+  devServerPort,
+} = require("./twitch.ext.config");
 
-const projectTitle = "Webpack App";
-/**
- * Directory name where the bundled file is located
- * @type {string}
- */
-const bundleDirName = "dist";
 const bundlePath = path.resolve(__dirname, bundleDirName);
-const templateHtmlPath = path.resolve(__dirname, "template.html");
 const getSrcFilePath = (filename) => path.resolve(__dirname, "src", filename);
 
 module.exports = (_env, argv) => {
@@ -24,32 +25,32 @@ module.exports = (_env, argv) => {
     Panel: {
       path: getSrcFilePath("Panel.ts"),
       outputHtml: "panel.html",
-      build: true,
+      build: entryPointOption.Panel,
     },
     Mobile: {
       path: getSrcFilePath("Mobile.ts"),
       outputHtml: "mobile.html",
-      build: true,
+      build: entryPointOption.Mobile,
     },
     Config: {
       path: getSrcFilePath("Config.ts"),
       outputHtml: "config.html",
-      build: true,
+      build: entryPointOption.Config,
     },
     LiveConfig: {
       path: getSrcFilePath("LiveConfig.ts"),
       outputHtml: "live_config.html",
-      build: true,
+      build: entryPointOption.LiveConfig,
     },
     VideoComponent: {
       path: getSrcFilePath("VideoComponent.ts"),
       outputHtml: "video_component.html",
-      build: true,
+      build: entryPointOption.VideoComponent,
     },
     VideoOverlay: {
       path: getSrcFilePath("VideoOverlay.ts"),
       outputHtml: "video_overlay.html",
-      build: true,
+      build: entryPointOption.VideoOverlay,
     },
   };
 
@@ -142,11 +143,11 @@ module.exports = (_env, argv) => {
       static: {
         directory: path.resolve(__dirname, "public"),
       },
-      host: argv.devrig ? "localhost.rig.twitch.tv" : "localhost",
+      host: argv.devrig ? "localhost.rig.twitch.tv" : devServerHost,
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
-      port: argv.port,
+      port: devServerPort,
       hot: true,
     };
   }
