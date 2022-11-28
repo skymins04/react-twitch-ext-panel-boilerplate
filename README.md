@@ -70,3 +70,38 @@ The command below creates a .zip file that can be uploaded to the **"Twitch Deve
 ```bash
 $ npm run build (or "yarn run build")
 ```
+
+## Boilerplate Base Structure
+```
+/
+┣━ public/
+┃   ┣━ panel.html
+┃   ┣━ mobile.html
+┃   ┣━ config.html
+┃   ┣━ live_config.html
+┃   ┣━ video_component.html
+┃   ┗━ video_overlay.html
+┣━ src/
+┃   ┣━ @types/
+┃   ┣━ style/
+┃   ┃   ┗━ tailwind.css
+┃   ┣━ Panel.ts
+┃   ┣━ Mobile.ts
+┃   ┣━ Config.ts
+┃   ┣━ LiveConfig.ts
+┃   ┣━ VideoComponent.ts
+┃   ┗━ VideoOverlay.ts
+┣━ .gitignore
+┣━ .eslintrc
+┣━ .prettierrc
+┣━ .prettierignore
+┣━ tailwind.config.js
+┣━ postcss.config.js
+┣━ babel.config.js
+┣━ tsconfig.json
+┣━ webpack.config.js
+┣━ twitch.ext.config.js
+┣━ package.json
+┣━ template.html
+┗━ yarn.lock
+```
