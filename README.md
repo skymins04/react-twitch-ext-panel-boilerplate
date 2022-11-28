@@ -4,6 +4,8 @@
   React boilerplate for Twitch extension panel development (Typescript supported)
 ```
 
+----
+
 ## What does this include?
 
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white">
@@ -19,6 +21,8 @@
 
 <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white">
 <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black">
+
+----
 
 ## How to use this?
 
@@ -70,6 +74,8 @@ The command below creates a .zip file that can be uploaded to the **"Twitch Deve
 ```bash
 $ npm run build (or "yarn run build")
 ```
+
+----
 
 ## Boilerplate Base Structure
 ```

@@ -73,7 +73,7 @@ module.exports = (_env, argv) => {
       new CleanWebpackPlugin({
         verbose: true,
         cleanOnceBeforeBuildPatterns: [path.resolve(bundlePath, "**", "*")],
-      })
+      }),
     );
 
   for (const key in entryPoints) {
@@ -88,7 +88,7 @@ module.exports = (_env, argv) => {
             filename: entryPoints[key].outputHtml,
             title: projectTitle,
             minify: false,
-          })
+          }),
         );
       }
     }
