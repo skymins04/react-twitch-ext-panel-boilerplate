@@ -65,12 +65,15 @@ module.exports = (_env, argv) => {
     new webpack.ProvidePlugin({
       React: "react",
     }),
-    new CleanWebpackPlugin({
-      verbose: true,
-      cleanOnceBeforeBuildPatterns: [path.resolve(bundlePath, "**", "*")],
-    }),
     new webpack.HotModuleReplacementPlugin(),
   ];
+  if (argv.mode === "production")
+    plugins.push(
+      new CleanWebpackPlugin({
+        verbose: true,
+        cleanOnceBeforeBuildPatterns: [path.resolve(bundlePath, "**", "*")],
+      })
+    );
 
   for (const key in entryPoints) {
     if (entryPoints[key].build) {
@@ -111,7 +114,7 @@ module.exports = (_env, argv) => {
         },
         {
           test: /\.css$/i,
-          use: ["style-loader", "css-loader"],
+          use: ["style-loader", "css-loader", "postcss-loader"],
         },
         {
           test: /\.scss$/i,

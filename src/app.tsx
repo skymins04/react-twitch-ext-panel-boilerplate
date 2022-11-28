@@ -3,7 +3,7 @@ import React, { FC } from "react";
 const App: FC = () => {
   return (
     <>
-      <h1>hello world</h1>
+      <div className="text-red-500 font-bold">hello world</div>
     </>
   );
 };
