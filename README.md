@@ -69,6 +69,16 @@ The command below creates a .zip file that can be uploaded to the **"Twitch Deve
 $ npm run build (or "yarn run build")
 ```
 
+### 6. Run lint
+You can run eslint with the command below (if you want to use the "--fix" option, run lint:fix)
+```bash
+$ npm run lint (or "yarn run lint")
+```
+with --fix option:
+```bash
+$ npm run lint:fix (or "yarn run lint:fix")
+```
+
 ----
 
 ## Boilerplate Base Structure

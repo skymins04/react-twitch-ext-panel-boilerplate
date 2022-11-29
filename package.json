@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production && cd dist && zip -r dist.zip . && cd ..",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src"
   },
   "dependencies": {
     "react": "^18.2.0",
