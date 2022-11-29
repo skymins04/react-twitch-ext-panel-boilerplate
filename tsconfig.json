@@ -33,6 +33,7 @@
       "@Public/*": ["public/*"],
       "@Types/*": ["src/@types/*"],
       "@Style/*": ["src/style/*"],
+      "@Component/*": ["src/component/*"],
       "@ReduxPanel": ["src/redux/Panel/index.ts"],
       "@ReduxPanel/*": ["src/redux/Panel/*"],
       "@ReduxMobile": ["src/redux/Mobile/index.ts"],
