@@ -34,6 +34,8 @@
       "@Types/*": ["src/@types/*"],
       "@Style/*": ["src/style/*"],
       "@Component/*": ["src/component/*"],
+      "@Hook/*": ["src/hook/*"],
+      "@Util/*": ["src/util/*"],
       "@ReduxPanel": ["src/redux/Panel/index.ts"],
       "@ReduxPanel/*": ["src/redux/Panel/*"],
       "@ReduxMobile": ["src/redux/Mobile/index.ts"],
@@ -123,5 +125,5 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "src/**/*.test.ts", "src/**/*.test.tsx"]
 }

@@ -143,6 +143,8 @@ module.exports = (_env, argv) => {
         "@Types": path.resolve(__dirname, "src", "@types"),
         "@Style": path.resolve(__dirname, "src", "style"),
         "@Component": path.resolve(__dirname, "src", "component"),
+        "@Hook": path.resolve(__dirname, "src", "hook"),
+        "@Util": path.resolve(__dirname, "src", "util"),
         "@ReduxPanel": path.resolve(__dirname, "src", "redux", "Panel"),
         "@ReduxMobile": path.resolve(__dirname, "src", "redux", "Mobile"),
         "@ReduxConfig": path.resolve(__dirname, "src", "redux", "Config"),

@@ -1,4 +1,12 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "globals": {
+    "context": "readonly"
+  },
   "parser": "@typescript-eslint/parser",
   "plugins": ["prettier", "@typescript-eslint"],
   "parserOptions": {
@@ -6,8 +14,8 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "project": "./tsconfig.json"
+    }
+    // "project": "./tsconfig.json"
   },
   "settings": {
     "react": {

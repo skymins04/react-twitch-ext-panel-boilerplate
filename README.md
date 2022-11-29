@@ -81,6 +81,25 @@ with --fix option:
 $ npm run lint:fix (or "yarn run lint:fix")
 ```
 
+### 7. Run test
+You can run jest with the command below (if you want to use the "--watch" option, run test:watch)
+```bash
+$ npm run test (or "yarn run test")
+```
+with --watch option:
+```bash
+$ npm run test:watch (or "yarn run test:watch")
+```
+
+----
+
+## Required VSCode Extensions
+
+1. ESLint: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+2. Prettier: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+3. Tailwind CSS IntelliSense: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+4. PostCSS Language Support: https://marketplace.visualstudio.com/items?itemName=csstools.postcss
+
 ----
 
 ## Boilerplate Base Structure
@@ -97,6 +116,22 @@ $ npm run lint:fix (or "yarn run lint:fix")
 ┃   ┣━ @types/
 ┃   ┣━ style/
 ┃   ┃   ┗━ tailwind.css
+┃   ┣━ component/
+┃   ┃   ┗━ App/
+┃   ┃       ┣━ PanelApp.tsx
+┃   ┃       ┣━ PanelApp.text.tsx
+┃   ┃       ┣━ MobileApp.tsx
+┃   ┃       ┣━ MobileApp.test.tsx
+┃   ┃       ┣━ ConfigApp.tsx
+┃   ┃       ┣━ ConfigApp.test.tsx
+┃   ┃       ┣━ LiveConfigApp.tsx
+┃   ┃       ┣━ LiveConfigApp.test.tsx
+┃   ┃       ┣━ VideoComponentApp.tsx
+┃   ┃       ┣━ VideoComponentApp.test.tsx
+┃   ┃       ┣━ VideoOverlayApp.tsx
+┃   ┃       ┗━ VideoOverlayApp.test.tsx
+┃   ┣━ hook/
+┃   ┣━ util/
 ┃   ┣━ redux/
 ┃   ┃   ┣━ Panel/
 ┃   ┃   ┃   ┣━ slice/
@@ -135,6 +170,7 @@ $ npm run lint:fix (or "yarn run lint:fix")
 ┣━ tailwind.config.js
 ┣━ postcss.config.js
 ┣━ babel.config.js
+┣━ jest.config.js
 ┣━ tsconfig.json
 ┣━ webpack.config.js
 ┣━ twitch.ext.config.js
@@ -150,6 +186,8 @@ $ npm run lint:fix (or "yarn run lint:fix")
 - **"@Types"**: Directory of "Global type declare" (path: ./src/@types/)
 - **"@Style"**: Directory of "CSS files" (path: ./src/style/)
 - **"@Component"**: Directory of "Component files" (path: ./src/component/)
+- **"@Hook"**: Directory of "Hook files" (path: ./src/hook/)
+- **"@Util"**: Directory of "Utilitie files" (path: ./src/util/)
 - **"@ReduxPanel"**: Directory of redux for "Twitch extension Panel" (path: ./src/redux/Panel/)
 - **"@ReduxMobile"**: Directory of redux for "Twitch extension Mobile" (path: ./src/redux/Mobile/)
 - **"@ReduxConfig"**: Directory of redux for "Twitch extension Config" (path: ./src/redux/Config/)
