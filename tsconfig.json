@@ -28,8 +28,26 @@
     "module": "commonjs" /* Specify what module code is generated. */,
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
-    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
-    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
+    "baseUrl": "." /* Specify the base directory to resolve non-relative module names. */,
+    "paths": {
+      "@Public/*": ["public/*"],
+      "@Types/*": ["src/@types/*"],
+      "@Style/*": ["src/style/*"],
+      "@ReduxPanel": ["src/redux/Panel/index.ts"],
+      "@ReduxPanel/*": ["src/redux/Panel/*"],
+      "@ReduxMobile": ["src/redux/Mobile/index.ts"],
+      "@ReduxMobile/*": ["src/redux/Mobile/*"],
+      "@ReduxConfig": ["src/redux/Config/index.ts"],
+      "@ReduxConfig/*": ["src/redux/Config/*"],
+      "@ReduxLiveConfig": ["src/redux/LiveConfig/index.ts"],
+      "@ReduxLiveConfig/*": ["src/redux/LiveConfig/*"],
+      "@ReduxVideoComponent": ["src/redux/VideoComponent/index.ts"],
+      "@ReduxVideoComponent/*": ["src/redux/VideoComponent/*"],
+      "@ReduxVideoOverlay": ["src/redux/VideoOverlay/index.ts"],
+      "@ReduxVideoOverlay/*": ["src/redux/VideoOverlay/*"],
+      "@Src/*": ["src/*"],
+      "@/*": ["*"]
+    } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     "typeRoots": [
       "./node_modules/@types",

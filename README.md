@@ -8,7 +8,9 @@
 
 ## What does this include?
 
-<img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white"> <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
+<img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white"> <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black">
+
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/Redux Toolkit-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
 
 <img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=black"> <img src="https://img.shields.io/badge/Babel-F9DC3E?style=for-the-badge&logo=Babel&logoColor=black">
 
@@ -95,12 +97,37 @@ $ npm run lint:fix (or "yarn run lint:fix")
 ┃   ┣━ @types/
 ┃   ┣━ style/
 ┃   ┃   ┗━ tailwind.css
-┃   ┣━ Panel.ts
-┃   ┣━ Mobile.ts
-┃   ┣━ Config.ts
-┃   ┣━ LiveConfig.ts
-┃   ┣━ VideoComponent.ts
-┃   ┗━ VideoOverlay.ts
+┃   ┣━ redux/
+┃   ┃   ┣━ Panel/
+┃   ┃   ┃   ┣━ slice/
+┃   ┃   ┃   ┃   ┗━ common.ts
+┃   ┃   ┃   ┗━ index.ts
+┃   ┃   ┣━ Mobile/
+┃   ┃   ┃   ┣━ slice/
+┃   ┃   ┃   ┃   ┗━ common.ts
+┃   ┃   ┃   ┗━ index.ts
+┃   ┃   ┣━ Config/
+┃   ┃   ┃   ┣━ slice/
+┃   ┃   ┃   ┃   ┗━ common.ts
+┃   ┃   ┃   ┗━ index.ts
+┃   ┃   ┣━ LiveConfig/
+┃   ┃   ┃   ┣━ slice/
+┃   ┃   ┃   ┃   ┗━ common.ts
+┃   ┃   ┃   ┗━ index.ts
+┃   ┃   ┣━ VideoComponent/
+┃   ┃   ┃   ┣━ slice/
+┃   ┃   ┃   ┃   ┗━ common.ts
+┃   ┃   ┃   ┗━ index.ts
+┃   ┃   ┗━ VideoOverlay/
+┃   ┃       ┣━ slice/
+┃   ┃       ┃   ┗━ common.ts
+┃   ┃       ┗━ index.ts
+┃   ┣━ Panel.tsx
+┃   ┣━ Mobile.tsx
+┃   ┣━ Config.tsx
+┃   ┣━ LiveConfig.tsx
+┃   ┣━ VideoComponent.tsx
+┃   ┗━ VideoOverlay.tsx
 ┣━ .gitignore
 ┣━ .eslintrc
 ┣━ .prettierrc
@@ -115,3 +142,16 @@ $ npm run lint:fix (or "yarn run lint:fix")
 ┣━ template.html
 ┗━ yarn.lock
 ```
+
+## Boilerplate Default Path Alias
+- **"@"**: Project root directory (path: ./)
+- **"@Public"**: Public directory (path: ./public/)
+- **"@Src"**: Src directory (path: ./src/)
+- **"@Types"**: Directory of "Global type declare" (path: ./src/@types/)
+- **"@Style"**: Directory of "CSS files" (path: ./src/style/)
+- **"@ReduxPanel"**: Directory of redux for "Twitch extension Panel" (path: ./src/redux/Panel/)
+- **"@ReduxMobile"**: Directory of redux for "Twitch extension Mobile" (path: ./src/redux/Mobile/)
+- **"@ReduxConfig"**: Directory of redux for "Twitch extension Config" (path: ./src/redux/Config/)
+- **"@ReduxLiveConfig"**: Directory of redux for "Twitch extension LiveConfig" (path: ./src/redux/LiveConfig/)
+- **"@ReduxVideoComponent"**: Directory of redux for "Twitch extension VideoComponent" (path: ./src/redux/VideoComponent/)
+- **"@ReduxVideoOverlay"**: Directory of redux for "Twitch extension VideoOverlay" (path: ./src/redux/VideoOverlay/)

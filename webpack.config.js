@@ -23,32 +23,32 @@ module.exports = (_env, argv) => {
    */
   const entryPoints = {
     Panel: {
-      path: getSrcFilePath("Panel.ts"),
+      path: getSrcFilePath("Panel.tsx"),
       outputHtml: "panel.html",
       build: entryPointOption.Panel,
     },
     Mobile: {
-      path: getSrcFilePath("Mobile.ts"),
+      path: getSrcFilePath("Mobile.tsx"),
       outputHtml: "mobile.html",
       build: entryPointOption.Mobile,
     },
     Config: {
-      path: getSrcFilePath("Config.ts"),
+      path: getSrcFilePath("Config.tsx"),
       outputHtml: "config.html",
       build: entryPointOption.Config,
     },
     LiveConfig: {
-      path: getSrcFilePath("LiveConfig.ts"),
+      path: getSrcFilePath("LiveConfig.tsx"),
       outputHtml: "live_config.html",
       build: entryPointOption.LiveConfig,
     },
     VideoComponent: {
-      path: getSrcFilePath("VideoComponent.ts"),
+      path: getSrcFilePath("VideoComponent.tsx"),
       outputHtml: "video_component.html",
       build: entryPointOption.VideoComponent,
     },
     VideoOverlay: {
-      path: getSrcFilePath("VideoOverlay.ts"),
+      path: getSrcFilePath("VideoOverlay.tsx"),
       outputHtml: "video_overlay.html",
       build: entryPointOption.VideoOverlay,
     },
@@ -66,15 +66,22 @@ module.exports = (_env, argv) => {
     new webpack.ProvidePlugin({
       React: "react",
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ];
-  if (argv.mode === "production")
+  if (argv.mode === "development") {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(
+      new webpack.SourceMapDevToolPlugin({
+        filename: "[file].map",
+      }),
+    );
+  } else if (argv.mode === "production") {
     plugins.push(
       new CleanWebpackPlugin({
         verbose: true,
         cleanOnceBeforeBuildPatterns: [path.resolve(bundlePath, "**", "*")],
       }),
     );
+  }
 
   for (const key in entryPoints) {
     if (entryPoints[key].build) {
@@ -130,7 +137,22 @@ module.exports = (_env, argv) => {
         },
       ],
     },
-    resolve: { extensions: ["*", ".ts", ".tsx", ".js", ".jsx", ".json"] },
+    resolve: {
+      alias: {
+        "@Public": path.resolve(__dirname, "public"),
+        "@Types": path.resolve(__dirname, "src", "@types"),
+        "@Style": path.resolve(__dirname, "src", "style"),
+        "@ReduxPanel": path.resolve(__dirname, "src", "redux", "Panel"),
+        "@ReduxMobile": path.resolve(__dirname, "src", "redux", "Mobile"),
+        "@ReduxConfig": path.resolve(__dirname, "src", "redux", "Config"),
+        "@ReduxLiveConfig": path.resolve(__dirname, "src", "redux", "LiveConfig"),
+        "@ReduxVideoComponent": path.resolve(__dirname, "src", "redux", "VideoComponent"),
+        "@ReduxVideoOverlay": path.resolve(__dirname, "src", "redux", "VideoOverlay"),
+        "@Src": path.resolve(__dirname, "src"),
+        "@": __dirname,
+      },
+      extensions: ["*", ".ts", ".tsx", ".js", ".jsx", ".json"],
+    },
     output: {
       filename: "[name].bundle.js",
       path: bundlePath,
