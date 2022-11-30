@@ -19,4 +19,4 @@ const commonSlice = createSlice({
 });
 export default commonSlice;
 
-export const mobileCommonAction = commonSlice.actions;
+export const liveConfigCommonAction = commonSlice.actions;
